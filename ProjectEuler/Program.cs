@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.ProblemClasses;
+using System;
 
 namespace ProjectEuler
 {
@@ -7,6 +8,10 @@ namespace ProjectEuler
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Console.WriteLine(MultiplesOf3and5.SumOfMultiplesOf3and5(1000));
+
+
         }
     }
 }

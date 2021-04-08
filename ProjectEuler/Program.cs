@@ -20,6 +20,19 @@ namespace ProjectEuler
             Console.WriteLine();
 
             Console.WriteLine(EvenFibonacciNumbers.SumOfEvenNumbers(4000000));
+
+            Console.WriteLine();
+
+            var primes = GeneratePrimes.GenerateAllPrimesForMaxValue(13195);
+
+            foreach (var prime in primes)
+            {
+                Console.Write($"{prime} ");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine(LargestPrimeFactor.FindLargesPrimeFactor(600851475143));
         }
     }
 }

@@ -96,34 +96,58 @@ namespace ProjectEuler.ProblemClasses
         }
     }
 
-    public class LargestPalindromeV1
+    public class LargestPalindromeV2
     {
         private List<int> _numbers;
 
-        public LargestPalindromeV1(int numOfDigits)
+        public LargestPalindromeV2(int numOfDigits)
         {
             _numbers = GenerateNumberList(numOfDigits);
         }
 
         public int FindLargestPalendromeProduct()
         {
+            var palindromeList = GeneratePalindromeList(_numbers);
+            var largest = GetLargestIntFromIntList(palindromeList);
+
+            return largest;
+        }
+
+        private List<int> GeneratePalindromeList(List<int> numberList)
+        {
+            var palindromeList = new List<int>();
+
             for (int i = _numbers[0]; i > 0; i--)
             {
                 for (int j = _numbers[1]; j > 0; j--)
                 {
-                    string productStr = (i * j).ToString();
+                    int product = i * j;
+                    string productStr = product.ToString();
 
                     var charArray = productStr.ToCharArray();
                     Array.Reverse(charArray);
                     var revStr = new String(charArray);
 
-                    
+
                     if (productStr == revStr)
-                        return i;
+                        palindromeList.Add(product);
                 }
             }
 
-            return 0;
+            return palindromeList;
+        }
+
+        private int GetLargestIntFromIntList(List<int> intList)
+        {
+            var largest = 0;
+
+            foreach (var number in intList)
+            {
+                if (number > largest)
+                    largest = number;
+            }
+
+            return largest;
         }
 
         private List<int> GenerateNumberList(int numOfDigits)
@@ -143,6 +167,11 @@ namespace ProjectEuler.ProblemClasses
             }
 
             return startingDigits;
+        }
+
+        ~LargestPalindromeV2()
+        {
+            Console.WriteLine("I am being destructed.");
         }
     }
 }

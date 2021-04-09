@@ -36,11 +36,13 @@ namespace ProjectEuler
 
             Console.WriteLine();
 
-            var largestPalindrome = new LargestPalindromeV1(2);
+            var largestPalindrome = new LargestPalindromeV2(2);
 
             var product = largestPalindrome.FindLargestPalendromeProduct();
 
-            Console.WriteLine(product);           
+            Console.WriteLine(product);
+
+            Console.WriteLine();
         }
     }
 }

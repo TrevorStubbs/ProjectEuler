@@ -33,6 +33,14 @@ namespace ProjectEuler
             Console.WriteLine();
 
             Console.WriteLine(LargestPrimeFactor.FindLargesPrimeFactor(600851475143));
+
+            Console.WriteLine();
+
+            var largestPalindrome = new LargestPalindromeV1(2);
+
+            var product = largestPalindrome.FindLargestPalendromeProduct();
+
+            Console.WriteLine(product);           
         }
     }
 }

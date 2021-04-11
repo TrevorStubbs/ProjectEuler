@@ -117,9 +117,9 @@ namespace ProjectEuler.ProblemClasses
         {
             var palindromeList = new List<int>();
 
-            for (int i = _numbers[0]; i > 0; i--)
+            for (int i = numberList[0]; i > 0; i--)
             {
-                for (int j = _numbers[1]; j > 0; j--)
+                for (int j = numberList[1]; j > 0; j--)
                 {
                     int product = i * j;
                     string productStr = product.ToString();

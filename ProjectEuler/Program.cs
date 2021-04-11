@@ -43,6 +43,8 @@ namespace ProjectEuler
             Console.WriteLine(product);
 
             Console.WriteLine();
+
+
         }
     }
 }
